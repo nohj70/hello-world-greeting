@@ -1,3 +1,6 @@
+import jenkins.model.*
+jenkins = Jenkins.instance
+
 node('mydocker') {
   stage('Poll') {
     scm checkout
