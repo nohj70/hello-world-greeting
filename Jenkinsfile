@@ -1,5 +1,5 @@
 
-node('build-ssh-slave-0.1') {
+node('slave02') {
   stage('Poll') {
     scm checkout
   }
