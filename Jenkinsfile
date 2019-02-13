@@ -1,7 +1,7 @@
 
 node('build-ssh-slave-0.1') {
   stage('Poll') {
-    scm checkout
+    checkout scm
   }
   
   stage('Build & Unit test') {
