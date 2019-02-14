@@ -1,7 +1,13 @@
 
 node('aget-ssh-9094-1') {
   stage('Poll') {
+    
     checkout scm
+    
+    configFileProvider(
+        [configFile(fileId: '0bb82d12-668b-40a8-9d96-61f1d04a243f', variable: 'MAVEN_SETTINGS')]) {
+        sh 'mvn -s $MAVEN_SETTINGS clean package'
+    }
   }
   
   stage('Build & Unit test') {
