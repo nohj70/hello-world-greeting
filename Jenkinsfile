@@ -19,7 +19,8 @@ node('aget-ssh-9094-1') {
     
     
     junit '**/target/surefire-reports/TEST-*.xml'
-    archiveArtifacts 'target/*.jar'
+    
+    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
   }
   
   stage('Static Code Analysis') {
@@ -40,7 +41,8 @@ node('aget-ssh-9094-1') {
     }
     
     junit '**/target/failsafe-reports/TEST-*.xml'
-    archiveArtifacts 'target/*.jar'
+    
+    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
   }
   
   stage ('Publish'){
