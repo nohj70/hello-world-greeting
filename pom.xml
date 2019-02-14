@@ -71,6 +71,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <skip>${surefire.skip}</skip>
+          <useSystemClassLoader>false</useSystemClassLoader>
         </configuration>
       </plugin>
 
