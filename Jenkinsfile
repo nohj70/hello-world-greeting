@@ -33,8 +33,6 @@ node('aget-ssh-9094-1') {
   }
   
   stage('Integration Test'){
-    sh 'mvn clean verify -Dsurefire.skip=true';
-    
     
     configFileProvider(
         [configFile(fileId: '0bb82d12-668b-40a8-9d96-61f1d04a243f', variable: 'MAVEN_SETTINGS')]) {
