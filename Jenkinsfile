@@ -46,6 +46,7 @@ node('aget-ssh-9094-1') {
   }
   
   stage ('Publish'){
+    /*
     def server = Artifactory.server 'Default Artifactory Server'
     def uploadSpec = """{
       "files": [
@@ -57,5 +58,9 @@ node('aget-ssh-9094-1') {
       ]
     }"""
     server.upload(uploadSpec)
+    */
+    nexusPublisher nexusInstanceId: 'mi-server-repository-nexus-9080', nexusRepositoryId: 'maven-snapshots', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-0.0.1.war']], mavenCoordinate: [artifactId: 'hello', groupId: 'employee', packaging: 'war', version: '0.0.1']]], tagName: 'tag-upload-p001'
+    
+    
   }
 }
