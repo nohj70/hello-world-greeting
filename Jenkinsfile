@@ -6,18 +6,30 @@ node('aget-ssh-9094-1') {
     
     configFileProvider(
         [configFile(fileId: '0bb82d12-668b-40a8-9d96-61f1d04a243f', variable: 'MAVEN_SETTINGS')]) {
-        sh 'mvn -s $MAVEN_SETTINGS clean package'
+        sh 'mvn -s $MAVEN_SETTINGS clean'
     }
   }
   
   stage('Build & Unit test') {
-    sh 'mvn --settings prueba-agente-ssh-slave-03.settings.xml clean verify -DskipITs=true';
+    
+    configFileProvider(
+        [configFile(fileId: '0bb82d12-668b-40a8-9d96-61f1d04a243f', variable: 'MAVEN_SETTINGS')]) {
+        sh 'mvn -s $MAVEN_SETTINGS clean verify -DskipITs=true'
+    }
+    
+    
     junit '**/target/surefire-reports/TEST-*.xml'
     archive 'target/*.jar'
   }
   
   stage('Static Code Analysis') {
-    sh 'mvn --settings prueba-agente-ssh-slave-03.settings.xml clean verify sonar:sonar -Dsonar.projectName=example-project -Dsonar.projectKey=example-project -Dsonar.projectVersion=$BUILD_NUMBER -Dsonar.host.url=http://172.17.0.1:9010 -Djdk.net.URLClassPath.disableClassPathURLCheck=true';
+    
+    configFileProvider(
+        [configFile(fileId: '0bb82d12-668b-40a8-9d96-61f1d04a243f', variable: 'MAVEN_SETTINGS')]) {
+        sh 'mvn -s $MAVEN_SETTINGS clean verify sonar:sonar -Dsonar.projectName=example-project -Dsonar.projectKey=example-project -Dsonar.projectVersion=$BUILD_NUMBER -Dsonar.host.url=http://172.17.0.1:9010 -Djdk.net.URLClassPath.disableClassPathURLCheck=true'
+    }
+    
+    
   }
   
   stage('Integration Test'){
