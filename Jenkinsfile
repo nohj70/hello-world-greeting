@@ -59,8 +59,9 @@ node('aget-ssh-9094-1') {
     }"""
     server.upload(uploadSpec)
     */
-    createTag nexusInstanceId: 'mi-server-repository-nexus-9080', tagAttributesJson: '{"createdBy" : "JohnSmith"}', tagName: 'tag-upload-p001'
-    nexusPublisher nexusInstanceId: 'mi-server-repository-nexus-9080', nexusRepositoryId: 'maven-snapshots', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-0.0.1.war']], mavenCoordinate: [artifactId: 'hello', groupId: 'employee', packaging: 'war', version: '0.0.1']]], tagName: 'tag-upload-p001'
+    
+    
+    nexusPublisher nexusInstanceId: 'mi-server-repository-nexus-9080', nexusRepositoryId: 'maven-snapshots', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-0.0.1.war']], mavenCoordinate: [artifactId: 'hello', groupId: 'employee', packaging: 'war', version: '0.0.1']]]
     
     
   }
