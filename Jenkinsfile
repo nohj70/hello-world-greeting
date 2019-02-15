@@ -97,7 +97,7 @@ node('docker-performance-testing'){
   }
   
   stage('despliegue'){
-    untash 'binary'
+    unstash 'binary'
     sh 'cp target/hello-0.0.1.war /opt/tomcat/webapps/';
     
   }
