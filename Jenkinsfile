@@ -105,8 +105,7 @@ node('docker-performance-testing'){
   stage('performance testing'){
     
     sh '''cd /opt/jmeter/bin/
-    ./jmeter.sh -n -t $WORKSPACE/src/pt/plan-prueba-001.jmx -l
-    $WORKSPACE/test_report.jtl''';
+    ./jmeter.sh -n -t $WORKSPACE/src/pt/plan-prueba-001.jmx -l $WORKSPACE/test_report.jtl''';
     
     step([$class: 'ArtifactArchiver', artifacts: '**/*.jtl'])
     
