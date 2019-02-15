@@ -95,6 +95,31 @@ node('docker-performance-testing'){
     sh '''cd /opt/tomcat/bin
       ./startup.sh''';
   }
+  
+  stage('despliegue'){
+    untash 'binary'
+    sh 'cp target/hello-0.0.1.war /opt/tomcat/webapps/';
+    
+  }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
