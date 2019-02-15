@@ -101,6 +101,16 @@ node('docker-performance-testing'){
     sh 'cp target/hello-0.0.1.war /opt/tomcat/webapps/';
     
   }
+  
+  stage('performance testing'){
+    
+    sh '''cd /opt/jmeter/bin/
+    ./jmeter.sh -n -t $WORKSPACE/src/pt/plan-prueba-001.jmx -l
+    $WORKSPACE/test_report.jtl''';
+    
+    step([$class: 'ArtifactArchiver', artifacts: '**/*.jtl'])
+    
+  }
 
 }
 
