@@ -84,24 +84,17 @@ stash includes:
 
 
     
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  } 
   
   
 }
+
+
+node('docker-performance-testing'){
+  stage('stage iniciando tomcat){
+    sh '''cd /opt/tomcat/bin
+      ./startup.sh''';
+  }
+
+}
+
