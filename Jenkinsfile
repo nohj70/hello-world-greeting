@@ -28,7 +28,7 @@ node('aget-ssh-9094-1') {
     configFileProvider(
         [configFile(fileId: '0bb82d12-668b-40a8-9d96-61f1d04a243f', variable: 'MAVEN_SETTINGS')]) {
       
-      withSonarQubeEnv('My SonarQube Server') {
+      withSonarQubeEnv('mi-sonar-9010') {
           sh 'mvn -s $MAVEN_SETTINGS clean verify sonar:sonar -Dsonar.projectName=example-project -Dsonar.projectKey=example-project -Dsonar.projectVersion=$BUILD_NUMBER -Dsonar.host.url=http://172.17.0.1:9010'
       } // SonarQube taskId is automatically attached to the pipeline context
       
