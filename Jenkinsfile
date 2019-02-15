@@ -61,7 +61,7 @@ node('aget-ssh-9094-1') {
     */
     
     
-    nexusPublisher nexusInstanceId: 'mi-server-repository-nexus-9080', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-0.0.1.war']], mavenCoordinate: [artifactId: 'hello', groupId: 'employee', packaging: 'war', version: '0.0.1']]]
+    nexusPublisher nexusInstanceId: 'mi-server-repository-nexus-9080', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/hello-0.0.1.war']], mavenCoordinate: [artifactId: 'hello', groupId: 'employee', packaging: 'war', version: '0.0.$BUILD_NUMBER']]]
     
     
   }
