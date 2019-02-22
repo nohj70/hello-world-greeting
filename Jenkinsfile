@@ -1,5 +1,5 @@
 
-def isSnapshot='asdf'
+myVar='asdf'
 
 node('aget-ssh-9094-1') {
   stage('Poll') {
@@ -7,6 +7,6 @@ node('aget-ssh-9094-1') {
     
     //versionPom = readMavenPom().getVersion()
     
-    echo isSnapshot
+     echo "${myVar}"
   }
 }
