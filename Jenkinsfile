@@ -5,8 +5,8 @@ node('aget-ssh-9094-1') {
   stage('Poll') {
     scm checkout
     
-    //versionPom = readMavenPom().getVersion()
-    
-     echo "${myVar}"
+    some_var = 'Hello World' // this is Groovy
+    echo some_var // printing via Groovy works
+    sh "echo $some_var"
   }
 }
