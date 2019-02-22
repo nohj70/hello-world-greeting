@@ -11,6 +11,7 @@ node('aget-ssh-9094-1') {
       
         AGENT_LABEL_ACCEPTANCE = "docker-performance-testing"      
         AGENT_LABEL_PRD = "docker-prd"
+        AGENT_LABEL = "docker-performance-testing"
      //}
   }
 }
@@ -18,7 +19,7 @@ node('aget-ssh-9094-1') {
 
 pipeline {
     agent {
-       label $AGENT_LABEL
+       label "$AGENT_LABEL"
     }
 
     stages {
