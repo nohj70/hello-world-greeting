@@ -5,8 +5,8 @@ node('aget-ssh-9094-1') {
   stage('Poll') {
     scm checkout
     
-    versionPom = readMavenPom().getVersion()
+    //versionPom = readMavenPom().getVersion()
     
-    echo "version pom: $versionPom"
+    echo "version pom: $isSnapshot"
   }
 }
