@@ -1,4 +1,4 @@
-def myVar = 'initial_value'
+myVar = 'initial_value'
 node {
   stage('Poll') {
     echo 'Staging Components...'
