@@ -1,5 +1,5 @@
 myVar = 'initial_value'
-node('aget-ssh-9094-1') {
+node {
   stage('Poll') {
     echo 'Staging Components...'
     echo "1: ${myVar}" // prints 'hotness'
