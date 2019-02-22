@@ -1,5 +1,5 @@
 
-def isSnapshot = 'asdf'
+def isSnapshot='asdf'
 
 node('aget-ssh-9094-1') {
   stage('Poll') {
