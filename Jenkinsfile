@@ -7,7 +7,7 @@ node {
     echo myVar
     echo "3"
     
-    echo $initia.contains('initial')
+    echo $myVar.contains('initial')
     
     checkout scm
     
