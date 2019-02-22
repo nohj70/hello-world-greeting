@@ -1,6 +1,6 @@
 
-AGENT_LABEL_PRD = null
-AGENT_LABEL_ACCEPTANCE = null
+AGENT_LABEL_PRD = none
+AGENT_LABEL_ACCEPTANCE = none
 
 node('aget-ssh-9094-1') {
   stage('Poll') {
@@ -8,8 +8,8 @@ node('aget-ssh-9094-1') {
     //if (true) {
       
       
-        AGENT_LABEL_ACCEPTANCE = "docker-performance-testing"      
-        //AGENT_LABEL_PRD = "docker-prd"
+        //AGENT_LABEL_ACCEPTANCE = "docker-performance-testing"      
+        AGENT_LABEL_PRD = "docker-prd"
      //}
   }
 }
@@ -17,7 +17,7 @@ node('aget-ssh-9094-1') {
 
 pipeline {
     agent {
-       label none
+       label $AGENT_LABEL_PRD
     }
 
     stages {
@@ -30,7 +30,7 @@ pipeline {
 
         stage ("Performance build") {
            agent{             
-             label none
+             label $AGENT_LABEL_ACCEPTANCE
             }
             steps{
               echo "stage Prd build"
