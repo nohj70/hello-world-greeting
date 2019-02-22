@@ -8,8 +8,11 @@ node('aget-ssh-9094-1') {
     echo "3"
     
     scm checkout
-    
-    echo 'Staging Components...'
+  }
+  
+  
+  stage('stge 2') {
+    echo 'stge 2...'
     echo "4: ${myVar}" // prints 'hotness'
     echo "5"
     echo myVar
