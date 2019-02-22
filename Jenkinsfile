@@ -1,10 +1,18 @@
-
+myVar = 'initial_value'
 node('aget-ssh-9094-1') {
   stage('Poll') {
+    echo 'Staging Components...'
+    echo "1: ${myVar}" // prints 'hotness'
+    echo "2"
+    echo myVar
+    echo "3"
+    
     scm checkout
     
-    some_var = 'Hello World' // this is Groovy
-    echo some_var // printing via Groovy works
-    sh "echo $some_var"
+    echo 'Staging Components...'
+    echo "4: ${myVar}" // prints 'hotness'
+    echo "5"
+    echo myVar
+    echo "6"
   }
 }
