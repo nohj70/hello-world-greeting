@@ -10,9 +10,9 @@ node {
     checkout scm
     
     pom = readMavenPom file: 'pom.xml'
-    echo "version pom: $pom.version"
+    echo "version p   
     
-    sh "echo $pom.version"
+    sh "echo desde shell $pom.version"
   }
   
   
