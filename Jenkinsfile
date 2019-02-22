@@ -15,6 +15,7 @@ node {
     echo "version pom: $pom.version"
     
     sh "echo desde shell $pom.version"
+    sh "echo desde shell v2: ${pom.version}"
   }
   
   
