@@ -17,7 +17,7 @@ node('aget-ssh-9094-1') {
 
 pipeline {
     agent {
-       label "${AGENT_LABEL_PRD}"
+       label none
     }
 
     stages {
@@ -30,7 +30,7 @@ pipeline {
 
         stage ("Performance build") {
            agent{             
-             label "${AGENT_LABEL_ACCEPTANCE}"
+             label none
             }
             steps{
               echo "stage Prd build"
