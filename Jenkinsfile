@@ -6,8 +6,6 @@ node('aget-ssh-9094-1') {
     sh 'git --version'
     if (true) {
         AGENT_LABEL = "docker-prd"
-     } else {
-        AGENT_LABEL = "docker-performance-testing"
      }
   }
 }
@@ -15,13 +13,13 @@ node('aget-ssh-9094-1') {
 
 pipeline {
     agent {
-       label "${AGENT_LABEL}"
+       label "docker-performance-testing"
     }
 
     stages {
         stage('Prd build') {
            steps {
-              echo "stage Prd build"
+              echo "stage Performance build"
               echo "Running in ${AGENT_LABEL}"
            }
         } 
@@ -31,7 +29,7 @@ pipeline {
              label "${AGENT_LABEL}"
             }
             steps{
-              echo "stage Performance build"
+              echo "stage Prd build"
               echo "Running in ${AGENT_LABEL}"
             }
         }
