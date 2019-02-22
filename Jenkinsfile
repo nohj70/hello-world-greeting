@@ -1,4 +1,4 @@
-myVar = 'initial_value'
+def myVar = 'initial_value'
 node {
   stage('Poll') {
     echo 'Staging Components...'
@@ -7,7 +7,7 @@ node {
     echo myVar
     echo "3"
     
-    echo $myVar.contains('initial')
+    echo "myvar contiene initial? : ${myVar.contains('initial')}"
     
     checkout scm
     
