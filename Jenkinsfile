@@ -7,6 +7,8 @@ node {
     echo myVar
     echo "3"
     
+    echo $initia.contains('initial')
+    
     checkout scm
     
     pom = readMavenPom file: 'pom.xml'
