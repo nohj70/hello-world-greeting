@@ -7,6 +7,6 @@ node('aget-ssh-9094-1') {
     
     //versionPom = readMavenPom().getVersion()
     
-    echo "version pom: ${isSnapshot}"
+    echo isSnapshot
   }
 }
