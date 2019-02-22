@@ -7,7 +7,7 @@ node('aget-ssh-9094-1') {
     echo myVar
     echo "3"
     
-    scm checkout
+    checkout scm
   }
   
   
