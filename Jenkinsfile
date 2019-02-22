@@ -11,6 +11,8 @@ node {
     
     pom = readMavenPom file: 'pom.xml'
     echo "version pom: $pom.version"
+    
+    sh 'echo "shell version pom: ${pom.version}"'
   }
   
   
