@@ -8,6 +8,11 @@ node {
     echo "3"
     
     echo "myvar contiene initial? : ${myVar.contains('initial')}"
+    if(${myVar.contains('initial')}){
+       myVar = 'si contenía inicial xD'
+      sh "echo nuevo myVar: ${myVar}"
+    }
+    
     
     checkout scm
     
