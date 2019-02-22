@@ -1,6 +1,6 @@
 
-AGENT_LABEL_PRD = none
-AGENT_LABEL_ACCEPTANCE = none
+AGENT_LABEL_PRD = "none"
+AGENT_LABEL_ACCEPTANCE = "none"
 
 node('aget-ssh-9094-1') {
   stage('Poll') {
